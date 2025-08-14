@@ -1,0 +1,257 @@
+/* Performance Optimization Styles */
+
+/* GPU Acceleration for Animations */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Optimized Transforms */
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Contain Layout Shifts */
+.contain-layout {
+  contain: layout;
+}
+
+.contain-paint {
+  contain: paint;
+}
+
+.contain-size {
+  contain: size;
+}
+
+.contain-strict {
+  contain: strict;
+}
+
+/* Optimized Scrolling */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Reduce Paint Operations */
+.isolate-layer {
+  isolation: isolate;
+}
+
+/* Optimized Backdrop Filters */
+.backdrop-optimized {
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Content Visibility for Performance */
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+.content-hidden {
+  content-visibility: hidden;
+}
+
+.content-visible {
+  content-visibility: visible;
+}
+
+/* Optimized Animations */
+.animate-optimized {
+  animation-fill-mode: both;
+  animation-play-state: running;
+}
+
+.animate-paused {
+  animation-play-state: paused;
+}
+
+/* Intersection Observer Optimizations */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--duration-slow) var(--ease-out), 
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduce Reflow/Repaint */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
+/* Optimized Gradients */
+.gradient-cached {
+  background-attachment: fixed;
+}
+
+/* Memory Efficient Shadows */
+.shadow-optimized {
+  box-shadow: var(--shadow-md);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Efficient Border Radius */
+.border-optimized {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Optimized Transitions */
+.transition-optimized {
+  transition: transform var(--duration-normal) var(--ease-out),
+              opacity var(--duration-normal) var(--ease-out);
+}
+
+.transition-colors-optimized {
+  transition: color var(--duration-normal) var(--ease-out),
+              background-color var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out);
+}
+
+/* Reduce Layout Thrashing */
+.layout-stable {
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Optimized Flexbox */
+.flex-optimized {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.flex-grow-optimized {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+/* Grid Optimizations */
+.grid-optimized {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+/* Image Optimizations */
+.img-optimized {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Font Loading Optimizations */
+.font-display-swap {
+  font-display: swap;
+}
+
+/* Critical Resource Hints */
+.preload-hint::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-image: var(--preload-image);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Reduce Composite Layers */
+.composite-layer {
+  position: relative;
+  z-index: 0;
+}
+
+/* Optimized Hover States */
+@media (hover: hover) {
+  .hover-optimized:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .touch-optimized {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+/* Reduce Motion for Accessibility and Performance */
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .motion-safe * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .contrast-optimized {
+    border: 2px solid;
+    background: none;
+  }
+}
+
+/* Dark Mode Performance */
+@media (prefers-color-scheme: dark) {
+  .dark-optimized {
+    color-scheme: dark;
+  }
+}
+
+/* Print Optimizations */
+@media print {
+  .print-hidden {
+    display: none !important;
+  }
+  
+  .print-optimized {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Memory Management */
+.memory-efficient {
+  contain: layout style paint;
+  content-visibility: auto;
+}
+
+/* Efficient Animations for Low-End Devices */
+@media (prefers-reduced-data: reduce) {
+  .data-saver {
+    animation: none;
+    background-image: none;
+    video: none;
+  }
+}
+

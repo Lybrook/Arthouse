@@ -1,0 +1,266 @@
+/* Optimized Animation System */
+
+/* Core Animation Keyframes */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 5px var(--artsy-teal), 
+      0 0 10px var(--artsy-teal), 
+      0 0 15px var(--artsy-teal); 
+  }
+  50% { 
+    box-shadow: 
+      0 0 10px var(--artsy-orange), 
+      0 0 20px var(--artsy-orange), 
+      0 0 30px var(--artsy-orange); 
+  }
+}
+
+@keyframes pulse-neon {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes matrix-rain {
+  0% { 
+    transform: translateY(-100vh); 
+    opacity: 0; 
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { 
+    transform: translateY(100vh); 
+    opacity: 0; 
+  }
+}
+
+@keyframes holographic-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px var(--artsy-teal),
+      0 0 10px var(--artsy-teal),
+      0 0 15px var(--artsy-teal),
+      0 0 20px var(--artsy-teal);
+  }
+  50% {
+    text-shadow: 
+      0 0 2px var(--artsy-teal),
+      0 0 5px var(--artsy-teal),
+      0 0 8px var(--artsy-teal),
+      0 0 12px var(--artsy-teal);
+  }
+}
+
+@keyframes parallax-float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+  }
+  25% { 
+    transform: translateY(-10px) translateX(5px); 
+  }
+  50% { 
+    transform: translateY(-5px) translateX(-5px); 
+  }
+  75% { 
+    transform: translateY(-15px) translateX(3px); 
+  }
+}
+
+@keyframes data-stream {
+  0% { 
+    transform: translateY(-100vh) scaleY(0); 
+    opacity: 0; 
+  }
+  10% { 
+    opacity: 1; 
+    transform: scaleY(1); 
+  }
+  90% { opacity: 1; }
+  100% { 
+    transform: translateY(100vh); 
+    opacity: 0; 
+  }
+}
+
+@keyframes energy-pulse {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(0, 204, 153, 0.7); 
+  }
+  70% { 
+    box-shadow: 0 0 0 10px rgba(0, 204, 153, 0); 
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(0, 204, 153, 0); 
+  }
+}
+
+@keyframes micro-bounce {
+  0%, 20%, 60%, 100% { 
+    transform: translateY(0); 
+  }
+  40% { 
+    transform: translateY(-10px); 
+  }
+  80% { 
+    transform: translateY(-5px); 
+  }
+}
+
+@keyframes loading-dots {
+  0%, 80%, 100% { 
+    transform: scale(0); 
+  }
+  40% { 
+    transform: scale(1); 
+  }
+}
+
+@keyframes hologram-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+  75% { opacity: 0.9; }
+}
+
+/* Animation Classes - Optimized for Performance */
+.float-animation {
+  animation: float 6s var(--ease-in-out) infinite;
+  will-change: transform;
+}
+
+.glow-effect {
+  animation: glow 3s var(--ease-in-out) infinite;
+  will-change: box-shadow;
+}
+
+.pulse-neon {
+  animation: pulse-neon 2s var(--ease-in-out) infinite;
+  will-change: opacity;
+}
+
+.matrix-effect {
+  animation: matrix-rain 8s var(--ease-linear) infinite;
+  will-change: transform, opacity;
+}
+
+.parallax-element {
+  animation: parallax-float 6s var(--ease-in-out) infinite;
+  will-change: transform;
+}
+
+.data-stream-element {
+  animation: data-stream 4s var(--ease-linear) infinite;
+  will-change: transform, opacity;
+}
+
+.energy-pulse {
+  animation: energy-pulse 2s infinite;
+  will-change: box-shadow;
+}
+
+.hologram-effect {
+  animation: 
+    holographic-shift 3s var(--ease-in-out) infinite,
+    hologram-flicker 2s var(--ease-in-out) infinite;
+  background: linear-gradient(45deg, transparent 30%, rgba(0, 204, 153, 0.1) 50%, transparent 70%);
+  background-size: 200% 200%;
+  will-change: background-position, opacity;
+}
+
+/* Interactive Hover Effects */
+.hover-glitch:hover {
+  animation: glitch var(--duration-normal) var(--ease-in-out);
+}
+
+.hover-neon:hover {
+  animation: neon-pulse 1s var(--ease-in-out) infinite;
+}
+
+.micro-bounce:hover {
+  animation: micro-bounce 0.6s var(--ease-out);
+}
+
+.scale-on-hover {
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Loading Animations */
+.loading-dot {
+  animation: loading-dots 1.4s infinite var(--ease-in-out) both;
+}
+
+.loading-dot:nth-child(1) { animation-delay: -0.32s; }
+.loading-dot:nth-child(2) { animation-delay: -0.16s; }
+
+/* Performance Optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Dark Mode Animation Variants */
+.dark .hologram-effect {
+  background: linear-gradient(45deg, transparent 30%, rgba(57, 255, 20, 0.1) 50%, transparent 70%);
+}
+
+/* Accessibility - Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-element,
+  .data-stream-element,
+  .hologram-effect,
+  .energy-pulse,
+  .float-animation,
+  .glow-effect,
+  .pulse-neon,
+  .matrix-effect {
+    animation: none;
+  }
+  
+  .scale-on-hover:hover {
+    transform: none;
+  }
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+  .parallax-element {
+    animation-duration: 8s;
+  }
+  
+  .float-animation {
+    animation-duration: 8s;
+  }
+  
+  .glow-effect {
+    animation-duration: 4s;
+  }
+}
+
